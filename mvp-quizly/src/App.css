@@ -1,0 +1,163 @@
+
+@media screen and (orientation: portrait) {
+  .outerContainer, .innerContainer, #enclosing, #root {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: hsl(228,45%,47%);
+    overflow: hidden;
+  }
+  .mainCard, .cardInput {
+    display: flex;
+    position: absolute;
+    height: 55%;
+    width: 100%;
+    fill: white;
+    top: 0%;
+    left: 0%;
+    transform: translate(0%, 10%);
+    font-size: 20px;
+    text-align: center;
+  }
+  .cardInput{
+    font-family: sans-serif;
+  }
+
+  .editBtn, .nextBtn, .prevBtn, .deckBtn, #wedge-right{
+    position: relative;
+    color: white;
+    top: -462px;
+    left: 368px;
+    z-index: 100;
+  }
+
+  .page {
+    position: relative;
+    color: white;
+    top: -700px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+  }
+  .nextBtn {
+    top: -200px;
+    left: 250px;
+  }
+
+  .prevBtn {
+    top: -224px;
+    left: 128px;
+  }
+  
+  .deckBtn {
+    top: -534px;
+    left: 15px;
+  }
+
+}
+
+@media screen and (orientation: landscape) {
+  .outerContainer, .innerContainer, #enclosing, #root {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: hsl(228,45%,47%);
+    overflow: hidden;
+  }
+  
+  .mainCard, .cardInput {
+    display: inline-block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(5.5%, 5.5%);
+    height: 90%;
+    width: 90%;
+    fill: white;
+    font-size: 30px;
+    text-align: center;
+  }
+  .cardInput {
+    font-family: sans-serif;
+    resize: none;
+  }
+
+  .editBtn, .nextBtn, .prevBtn, .deckBtn, #wedge-right{
+    position: relative;
+    color: white;
+    top: -367px;
+    left: 757px;
+    z-index: 100;
+  }
+
+  .page {
+    position: relative;
+    color: white;
+    top: -369px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+  }
+  .nextBtn {
+    top: -300px;
+  }
+
+  .prevBtn {
+    top: -225px;
+  }
+  
+  .deckBtn {
+    top: -151px;
+    left: 751px;
+  }
+
+  .popupList {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    position: relative;
+    flex-direction: row;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    justify-content: flex-start;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    height: 150px;
+    margin: 0px;
+    width: 750px;
+    left: 2%;
+    top: -160px;
+  }
+
+  .showCardList:hover + .popupList {
+    top: -80%;
+  }
+
+  .popupList:hover {
+    top: -80%;
+  }
+  
+  .listEntry {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+    flex: 0 0 200px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    background-color: white;
+    border-color: black;
+  }
+
+  .showCardList {
+    position: relative;
+    align-content: center;
+    top: -40%;
+    left: 44%;
+    color: white;
+    z-index: 200;
+  }
+
+}
+
