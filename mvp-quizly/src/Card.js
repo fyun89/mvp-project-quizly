@@ -19,7 +19,7 @@ class Card extends Component {
     if (this.props.editModeStatus) {
       textArea = <textarea className="cardInput" value={this.props.currentValue} type="text" maxLength="300" onChange={this.handleInput} />
     } else {
-      textArea = <textarea readOnly className="cardInput" value={this.props.currentValue} type="text" maxLength="300" onChange={this.handleInput} />
+      textArea = <textarea readOnly className="cardInput" id="flippable" value={this.props.currentValue} type="text" maxLength="300" onChange={this.handleInput} />
     }
     return (
       <div className="outerContainer">
