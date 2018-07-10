@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Card from './Card.js';
 import UserInterface from "./UserInterface.js";
 import PopupList from './PopupList.js';
@@ -58,6 +57,20 @@ class App extends Component {
         console.log("error: ", e.target.errorCode);
       };
 
+      /* Use below to populate table */
+      store.put({ cardId: 1, deckId: 1, relatedCardId: 2, side: "front", value: "This is the front side of card 1!", timeStamp: Date.now() })
+      store.put({ cardId: 2, deckId: 1, relatedCardId: 1, side: "back", value: "Back 1: This is the backside of the card 1!", timeStamp: Date.now() })
+      store.put({ cardId: 3, deckId: 1, relatedCardId: 4, side: "front", value: "This is the front side of card 2!", timeStamp: Date.now() })
+      store.put({ cardId: 4, deckId: 1, relatedCardId: 3, side: "back", value: "Back 2: This is the backside of the card 2!", timeStamp: Date.now() })
+      store.put({ cardId: 5, deckId: 1, relatedCardId: 6, side: "front", value: "This is the front side of card 3!", timeStamp: Date.now() })
+      store.put({ cardId: 6, deckId: 1, relatedCardId: 5, side: "back", value: "Back 3: This is the backside of the card 3!", timeStamp: Date.now() })
+      store.put({ cardId: 7, deckId: 1, relatedCardId: 8, side: "front", value: "This is the front side of card 4!", timeStamp: Date.now() })
+      store.put({ cardId: 8, deckId: 1, relatedCardId: 7, side: "back", value: "Back 4: This is the backside of the card 4!", timeStamp: Date.now() })
+      store.put({ cardId: 9, deckId: 1, relatedCardId: 10, side: "front", value: "This is the front side of card 5!", timeStamp: Date.now() })
+      store.put({ cardId: 10, deckId: 1, relatedCardId: 9, side: "back", value: "Back 5: This is the backside of the card 5!", timeStamp: Date.now() })
+      store.put({ cardId: 11, deckId: 1, relatedCardId: 12, side: "front", value: "This is the front side of card 6!", timeStamp: Date.now() })
+      store.put({ cardId: 12, deckId: 1, relatedCardId: 11, side: "back", value: "Back 6: This is the backside of the card 6!", timeStamp: Date.now() })
+      
       var q1 = store.getAll(); //using key to get the data
       //let qs = index.get("first")
       if (!currentThis.currentDeck){
@@ -80,19 +93,7 @@ class App extends Component {
           }
         };
       }
-      /* Use below to populate table */
-      store.put({ cardId: 1, deckId: 1, relatedCardId: 2, side: "front", value: "This is the front side of card 1!", timeStamp: Date.now() })
-      store.put({ cardId: 2, deckId: 1, relatedCardId: 1, side: "back", value: "Back 1: This is the backside of the card 1!", timeStamp: Date.now() })
-      store.put({ cardId: 3, deckId: 1, relatedCardId: 4, side: "front", value: "This is the front side of card 2!", timeStamp: Date.now() })
-      store.put({ cardId: 4, deckId: 1, relatedCardId: 3, side: "back", value: "Back 2: This is the backside of the card 2!", timeStamp: Date.now() })
-      store.put({ cardId: 5, deckId: 1, relatedCardId: 6, side: "front", value: "This is the front side of card 3!", timeStamp: Date.now() })
-      store.put({ cardId: 6, deckId: 1, relatedCardId: 5, side: "back", value: "Back 3: This is the backside of the card 3!", timeStamp: Date.now() })
-      store.put({ cardId: 7, deckId: 1, relatedCardId: 8, side: "front", value: "This is the front side of card 4!", timeStamp: Date.now() })
-      store.put({ cardId: 8, deckId: 1, relatedCardId: 7, side: "back", value: "Back 4: This is the backside of the card 4!", timeStamp: Date.now() })
-      store.put({ cardId: 9, deckId: 1, relatedCardId: 10, side: "front", value: "This is the front side of card 5!", timeStamp: Date.now() })
-      store.put({ cardId: 10, deckId: 1, relatedCardId: 9, side: "back", value: "Back 5: This is the backside of the card 5!", timeStamp: Date.now() })
-      store.put({ cardId: 11, deckId: 1, relatedCardId: 12, side: "front", value: "This is the front side of card 6!", timeStamp: Date.now() })
-      store.put({ cardId: 12, deckId: 1, relatedCardId: 11, side: "back", value: "Back 6: This is the backside of the card 6!", timeStamp: Date.now() })
+      
       tx.oncomplete = function() {
         db.close();
       };

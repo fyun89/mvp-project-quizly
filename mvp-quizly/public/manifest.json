@@ -2,7 +2,7 @@
   "name": "Quizly",
   "short_name": "Quizly",
   "theme_color": "#2196f3",
-  "background_color": "#ffffff",
+  "background_color": "4359AF",
   "display": "standalone",
   "orientation": "landscape",
   "Scope": "/",
