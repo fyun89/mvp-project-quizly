@@ -59,7 +59,7 @@
 
 }
 
-@media screen and (orientation: landscape) {
+@media only screen and (orientation: landscape) and (min-width: 800px ) {
   .outerContainer, .innerContainer, #enclosing, #root {
     position: relative;
     height: 100%;
@@ -185,3 +185,131 @@
 
 }
 
+@media only screen and (orientation: landscape) and (min-width: 600px ) {
+  .outerContainer, .innerContainer, #enclosing, #root {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: hsl(228,45%,47%);
+    overflow: hidden;
+  }
+  
+  .mainCard, .cardInput {
+    display: inline-block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(5.5%, 5.5%);
+    height: 85%;
+    width: 88%;
+    fill: white;
+    font-size: 30px;
+    text-align: center;
+    left: 1%;
+    top: 2%;
+  }
+
+  .cardInput {
+    box-shadow: 20px 20px 50px rgb(33, 45, 94);
+  }
+
+  .cardInput {
+    font-family: sans-serif;
+    resize: none;
+    transition: transform 0.5s;
+  }
+
+  #flippable:hover {
+    transform: rotateY( 180deg ) ;
+    transition: transform 0.5s;
+    left: 5%;
+    top: 5%;
+  }
+
+  .editBtn, .nextBtn, .prevBtn, .deckBtn, #wedge-right{
+    position: relative;
+    color: white;
+    top: -367px;
+    left: 92%;
+    z-index: 100;
+  }
+
+  .page {
+    position: relative;
+    color: white;
+    top: -369px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+    left: 1%;
+  }
+  .nextBtn {
+    top: -300px;
+  }
+
+  .prevBtn {
+    top: -225px;
+  }
+  
+  .deckBtn {
+    top: -151px;
+    left: 91.5%;
+  }
+
+  .popupList {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    position: relative;
+    flex-direction: row;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    justify-content: flex-start;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    height: 39%;
+    margin: 0px;
+    width: 96%;
+    left: 2%;
+    top: -160px;
+    transition-duration: 0.3s
+  }
+
+  .showCardList:hover + .popupList {
+    top: -80%;
+  }
+
+  .popupList:hover {
+    top: -80%;
+  }
+  
+  .listEntry {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+    flex: 0 0 200px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 20px 20px 50px rgb(33, 45, 94);
+  }
+
+  .showCardList {
+    position: relative;
+    align-content: center;
+    top: -42%;
+    left: 43.5%;
+    color: white;
+    z-index: 200;
+  }
+
+  .outer {
+    position: relative;
+    height: 100%;
+  }
+
+  textarea {
+    border: none !important;
+  }
+
+}
