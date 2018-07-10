@@ -93,7 +93,7 @@ class App extends Component {
           }
         };
       }
-      
+
       tx.oncomplete = function() {
         db.close();
       };
@@ -166,12 +166,14 @@ class App extends Component {
 
   render() {
     return <div className="outer">
-        {!this.state.currentDeck ? <div>Loading</div> : <div id="enclosing">
+        {!this.state.currentDeck ? <div>Loading</div> : 
+          <div id="enclosing">
             <Card input={this.handleInput} currentValue={this.state.value} editModeStatus={this.state.editMode} />
-        <UserInterface relatedCardId={this.state.relatedCardId} cardQty={this.state.currentDeck.length/2} currentCardId={this.state.cardId} handleClickNext={this.handleClickNext} handleClickPrev={this.handleClickPrev} toggleEdit={this.handleToggleEdit} editModeStatus={this.state.editMode} />
-            <div className="showCardList">Show Card List</div>
+            <UserInterface relatedCardId={this.state.relatedCardId} cardQty={this.state.currentDeck.length/2} currentCardId={this.state.cardId} handleClickNext={this.handleClickNext} handleClickPrev={this.handleClickPrev} toggleEdit={this.handleToggleEdit} editModeStatus={this.state.editMode} />
+              <div className="showCardList" onclick="">Show Card List</div>
             <PopupList handleClickCardList={this.handleClickCardList} currentDeck={this.state.currentDeck} />
-          </div>}
+          </div>
+        }
       </div>;
   }
 }

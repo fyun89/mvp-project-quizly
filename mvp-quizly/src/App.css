@@ -147,11 +147,11 @@
     transition-duration: 0.3s
   }
 
-  .showCardList:hover + .popupList {
+  .showCardList:focus + .popupList {
     top: -80%;
   }
 
-  .popupList:hover {
+  .popupList:focus {
     top: -80%;
   }
   
