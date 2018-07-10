@@ -7,11 +7,20 @@ class UserInterface extends Component {
     this.state = {};
     console.log('props at theUI,', this.props.editModeStatus)
     this.toggleEditMode = this.toggleEditMode.bind(this);
+    this.checkCardNum = this.checkCardNum.bind(this);
   }
 
   toggleEditMode(e) {
     e.preventDefault()
     this.props.toggleEdit()
+  }
+
+  checkCardNum(elem) {
+    if(elem % 2 === 0) {
+      return elem / 2;
+    } else {
+      return (elem + 1) / 2;
+    }
   }
 
   render() {
@@ -21,17 +30,22 @@ class UserInterface extends Component {
     } else {
       editButton = <div>Save</div>
     }
-    return (
+    return(
       <div className="userInterface">
-        <div className="page">Card 1 of 100</div>
+        <div className="page">Card {
+          `${this.checkCardNum(this.props.currentCardId)} of ${this.props.cardQty}`
+          }
+        </div>
         <div className="editBtn" onClick={this.toggleEditMode}>
           {editButton}
         </div>
-        <div className="nextBtn">Next</div>
-        <div className="prevBtn">Prev</div>
+        <div className="nextBtn" onClick={this.props.handleClickNext}>
+          Next
+        </div>
+        <div className="prevBtn" onClick={this.props.handleClickPrev}>Prev</div>
         <div className="deckBtn">Decks</div>
       </div>
-    );
+    )
   }
 }
 
